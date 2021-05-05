@@ -9,7 +9,7 @@ app.use("/lse",lse);
 
 //app.get('/', (req, res) => {
 app.get('/', (req, res) => {
-    res.send('Hello Simon this is the root directory')
+    res.send('Hello Simon this is the root directory running on xxxxxx')
   //res.status(200).send('Hello, Fastcharts!').end();
   
 });
