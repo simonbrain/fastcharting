@@ -3,14 +3,18 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const lse = require("./routes/lse");
+const data = require("./routes/data");
+const info = require("./routes/info");
 
-app.use("/lse",lse);
+app.use(express.static('public'));
+app.use("/data",data);
+app.use("/info",info);
 
 //app.get('/', (req, res) => {
 app.get('/', (req, res) => {
-    res.send('Hello Simon this is the root directory running on xxxxxx')
-  //res.status(200).send('Hello, Fastcharts!').end();
+    
+    //res.sendFile(path.join(__dirname, '/index.html'));
+    res.status(200).send('Hello, Fastcharts!').end();
   
 });
 
