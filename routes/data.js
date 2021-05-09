@@ -7,8 +7,8 @@ const axios = require('axios');
 
 
 router
-    .get("/",(req,res) => {
-        res.send('This is the data directory')
+    .get("/:id",(req,res) => {
+        res.send('Param sent was: '+ req.params.id)
     })
 
 router
