@@ -16,10 +16,11 @@ router
             const getLonData = async() => {
                 try {
                     const response = await axios.get(
-                        'http://storage.cloud.google.com/charting-lon-bucket/lse/test_lse.json?authuser=2'
+                       // 'http://storage.cloud.google.com/charting-lon-bucket/lse/test_lse.json?authuser=2'
+                       'http://storage.cloud.google.com/charting-lon-bucket/lse/test_lse.json'
                     )
                     res.send(response.data)
-                    //console.log(response)
+                    console.log(response)
                 }
                 catch (error){
                     console.log(error)
