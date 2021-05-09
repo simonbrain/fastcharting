@@ -7,8 +7,9 @@ const axios = require('axios');
 
 
 router
-    .get("/:id",(req,res) => {
-        res.send('Param sent was: '+ req.params.id)
+    .get("/",(req,res) => {
+        console.log(JSON.stringify(req.query))
+        res.send('Query sent was: '+ req.query)
     })
 
 router
