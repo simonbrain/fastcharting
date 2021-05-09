@@ -9,7 +9,7 @@ const axios = require('axios');
 router
     .get("/",(req,res) => {
         //console.log(JSON.stringify(req.query))
-        data = JSON.stringify(req.query)
+        let data = JSON.stringify(req.query)
         res.send('Query sent was: '+ data)
     })
 
