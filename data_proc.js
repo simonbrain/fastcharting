@@ -3,7 +3,19 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
+const { auth, requiresAuth } = require('express-openid-connect');
+app.use(
+  auth({
+    authRequired: false,
+    auth0Logout: true,
+    issuerBaseURL: 'https://dev-2k06-6q4.us.auth0.com',
+    baseURL: 'http://localhost:8001',
+    clientID: 'G2qghvMJrNzMIKbJnCar5R1SrDawqBb6',
+    secret: 'jkdjhbdwfjbhbekqwjbfjkbjhfbhjberjhjhlrrhjlehjlrbbljkvfrblkjbljkvkbljvef'
+  })
+);
+
+app.get('/', requiresAuth(), (req, res) => {
     const venue = req.query.venue
     //console.log(venue)
     const instrument = req.query.instrument

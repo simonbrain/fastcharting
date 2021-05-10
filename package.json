@@ -2,7 +2,9 @@
   "dependencies": {
     "ajv": "^8.3.0",
     "axios": "^0.21.1",
+    "dotenv": "^9.0.1",
     "express": "^4.17.1",
+    "express-openid-connect": "^2.3.1",
     "nodemon": "^2.0.7",
     "os": "^0.1.1"
   }

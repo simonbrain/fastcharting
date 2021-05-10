@@ -31,9 +31,20 @@ const schema = {
     additionalProperties: false
 }
 
+const { auth, requiresAuth } = require('express-openid-connect');
+router.use(
+  auth({
+    authRequired: false,
+    auth0Logout: true,
+    issuerBaseURL: 'https://dev-2k06-6q4.us.auth0.com',
+    baseURL: 'http://localhost:8000',
+    clientID: 'kYIdnc6K6FeqTi9lRDaG3aG9baA8wVG7',
+    secret: 'jkdjhbdwfjbhbekqwjbfjkbjhfbhjberjhjhlrrhjlehjlrbbljkvfrblkjbljkvkbljvef'
+  })
+);
 
 router
-    .get("/",(req,res) => {
+    .get("/", requiresAuth(), (req,res) => {
         //console.log(JSON.stringify(req.query))
         let data_json = JSON.stringify(req.query)
         let data = req.query
